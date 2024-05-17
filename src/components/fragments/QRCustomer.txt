@@ -1,0 +1,30 @@
+import QRReader from 'react-qr-reader'; // Import QRReader
+
+export default function QRCustomer(props) {
+  const { nama, qrCode } = props;
+
+  // Handle ketika QR Code dipindai
+  const handleScan = (data) => {
+    if (data) {
+      console.log('Hasil Pindai:', data); // Tampilkan hasil pindai di console log
+    }
+  };
+
+  // Handle error saat pindai QR Code
+  const handleError = (err) => {
+    console.error('Error Pindai:', err); // Tampilkan error di console log
+  };
+
+  return (
+    <div className='bg-[#3AAFA9] min-h-screen flex flex-wrap items-center justify-center'>
+      <div className='text-3xl font-bold'>{qrCode}</div>
+      {/* Tambahkan QRReader di dalam komponen */}
+      <QRReader
+        delay={300} // Delay antara setiap pindai dalam milidetik (opsional, default 300)
+        onError={handleError} // Panggil fungsi handleError saat terjadi error
+        onScan={handleScan} // Panggil fungsi handleScan saat QR Code dipindai
+        style={{ width: '100%' }} // Atur lebar QRReader agar sesuai dengan tampilan
+      />
+    </div>
+  );
+}

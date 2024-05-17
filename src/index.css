@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@screen mobile {
+  .mobile\:w-200px {
+    width: 200px;
+  }
+}
+
+@screen tablet {
+  .mobile\:w-300px {
+    width: 300px;
+  }
+}
+
+@screen laptop {
+  .mobile\:w-400px {
+    width: 400px;
+  }
+}
+
+@screen desktop {
+  .mobile\:w-500px {
+    width: 500px;
+  }
+}
